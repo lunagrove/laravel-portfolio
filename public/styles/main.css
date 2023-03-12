@@ -1,0 +1,232 @@
+body {
+    background: rgb(79,70,229);
+    background: linear-gradient(90deg, rgba(79,70,229,1) 0%, rgba(79,70,229,1) 65%, rgba(217,249,157,1) 65%, rgba(217,249,157,1) 100%);
+}
+
+img {
+    z-index: 1;
+	outline: 1px solid #FFF;
+  	outline-offset: 20px;
+}
+
+.img-no-outline {
+	outline: none;
+}
+
+.blue-border {
+    outline: 1px solid rgb(79,70,229);
+}
+
+.no-border {
+    outline: none;
+}
+
+form {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.form-edit {
+    border: none;
+	background-color: white;
+    padding: 20px;
+}
+
+.form-button:hover {
+    color: black;
+    outline: none;
+    background-color: none;
+}
+
+body > main > div > div:nth-child(2) > div > nav > div.hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between > div:nth-child(1) > p {
+    color: #d9f99d;
+}
+
+
+/* Dropdown Menu */
+nav {
+	width: 100%;
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+	background-color: black;
+	opacity: 0.8;
+}
+  
+nav.activated {
+	transition: height 0.3s ease, visibility 0s 0.3s;
+}
+  
+.show nav {
+	transition: height 0.3s ease, visibility 0s;
+	visibility: visible;
+	height: 230px;
+    display: block;
+}
+  
+nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+    align-items: left;
+}
+
+nav ul .left-menu {
+	list-style: none;
+    display: block;
+}
+
+nav ul .right-menu {
+	list-style: none;
+    display: block;
+    color: #d9f99d;
+}
+
+nav li {
+    width: 100%;
+    text-align: left;
+    font-weight: 200;
+    line-height: 2.5em;
+}
+
+.btn-menu {
+	display: block;
+	width: 40px;
+	background-color: black;
+	opacity: 0.8;
+	border: none;
+	padding: 0; 
+}
+
+.btn-menu .button-content {
+	display: block;
+	height: 24px;
+	cursor: pointer;
+}
+
+.btn-menu .bar {
+	display: block;
+	height: 4px;
+	background-color: #d9f99d;
+	width: 30px;
+	position: relative;
+	top: 10px;
+	transition: all 0.3s ease-in-out;
+}
+  
+.btn-menu .bar:before {
+	content: "";
+	width: 100%;
+	height: 4px;
+	top: 10px;
+	left: 0;
+	background-color: #d9f99d;
+	position: absolute;
+	transition: all 0.3s ease-in-out;
+}
+  
+.btn-menu .bar:after {
+	content: "";
+	width: 100%;
+	height: 4px;
+	top: -10px;
+	left: 0;
+	background-color: #d9f99d;
+	position: absolute;
+	transition: all 0.3s ease-in-out;
+}
+  
+.btn-menu:focus {
+	outline: none;
+}
+  
+.btn-menu:focus .button-content {
+	outline: 5px solid #7683c9;
+}
+  
+.show .btn-menu .bar {
+	background-color: transparent;
+}
+  
+.show .btn-menu .bar:before {
+	top: 0;
+	transform: rotate(45deg);
+}
+  
+.show .btn-menu .bar:after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .tooltip .tooltip-text {
+	visibility: hidden;
+	width: 160px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: -165px;
+	opacity: 0;
+	transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltip-text::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 100%; 
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent #333;
+  }
+  
+  .tooltip:hover .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+  }
+  
+
+@media (min-width: 640px) {
+
+	.btn-menu {
+		display: none;
+	}
+	
+	nav {
+		visibility: visible;
+		height: 48px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+	}
+
+    nav ul .left-menu {
+        list-style: none;
+        justify-content: flex-start;
+    }
+    
+    nav ul .right-menu {
+        list-style: none;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        width: auto;
+        text-align: left;
+        font-weight: bold;
+        line-height: 1em;
+    }
+}
